@@ -1,0 +1,442 @@
+#include<iostream>
+#include<Windows.h>
+#include<list>
+#include<assert.h>
+
+using namespace std;
+
+
+
+void Test()
+{
+	list<int> arr(5, 3);
+
+	list<int>::iterator it = arr.begin();
+	//这里就是申请一个迭代器,
+	
+	while (it != arr.end())
+	{
+		cout << *it << " ";
+		++it;
+	}
+
+	system("pause");
+	int i = 0;
+}
+
+//template<class T>
+//void print(list<T>& arr)
+//{
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//	cout << endl;
+//}
+//
+//void Test()
+//{
+//	list<int> arr;
+//
+//	list<int> arr2(5, 1);
+//
+//	arr.push_back(1);
+//
+//	arr.push_back(2);
+//
+//	arr.push_back(3);
+//
+//	arr.push_back(4);
+//
+//	arr.push_back(5);
+//
+//	cout << "arr List容器的元素分别为: ";
+//	print(arr);
+//
+//	cout << "arr2List容器的元素分别为: ";
+//	print(arr2);
+//
+//	arr2.assign(5, 2); //将arr2中的元素重新初始化,使用方式跟构造相似.
+//
+//	cout << endl;
+//	cout << "调用assign函数之后." << endl;
+//	cout << endl;
+//
+//	cout << "arr2List容器的元素分别为: ";
+//	print(arr2);
+//
+//	arr.splice(arr.begin(), arr2, arr2.begin(), arr2.end());
+//	//将arr2的所有元素，连接到arr.begin()前面，并释放掉arr2所有元素
+//
+//	cout << endl;
+//	cout << "调用splice函数之后." << endl;
+//	cout << endl;
+//
+//	cout << "arr List容器的元素分别为: ";
+//	print(arr);
+//
+//	cout << "arr2List容器的元素分别为: ";
+//	print(arr2);
+//
+//	arr.sort(); //排序就不说了.
+//
+//	cout << endl;
+//	cout << "排序后 arr List容器的元素分别为: ";
+//	print(arr);
+//}
+
+	//arr.swap(arr2); //交换两个链表.
+
+	//cout << endl;
+	//cout << "调用swap函数之后." << endl;
+	//cout << endl;
+
+	//cout << "arr List容器的元素分别为: ";
+	//print(arr);
+
+	//cout << "arr2 List容器的元素分别为: ";
+	//print(arr2);
+
+	//arr.merge(arr2);//合并两个链表并让它有序.
+
+	//cout << endl;
+	//cout << "调用merge函数之后." << endl;
+	//cout << endl;
+
+	//cout << "arr List容器的元素分别为: ";
+	//print(arr);
+
+	//cout << "arr2 List容器的元素分别为: ";
+	//print(arr2);
+
+	//arr.unique(); //删除所有连续并且相同的1
+
+	//cout << endl;
+	//cout << "调用unique函数之后." << endl;
+	//cout << endl;
+
+	//cout << "arr List容器的元素分别为: ";
+	//print(arr);
+
+
+
+
+
+		//c1.swap(c2);                    将c1和c2交换。
+		//c1.merge(c2)                    合并2个有序的链表并使之有序, 从新放到c1里, 释放c2。
+		//c1.merge(c2, comp)               合并2个有序的链表并使之按照自定义规则排序之后从新放到c1中, 释放c2。
+		//c1.splice(c1.beg, c2, c2.beg)     将c2的beg位置的元素连接到c1的beg位置，并且在c2中施放掉beg位置的元素
+		//unique()                        删除相邻的元素
+		//c.sort()                        将链表排序，默认升序
+
+	////使用erase删除指定的位置
+
+	//arr.erase(arr.begin());
+
+	//cout << "该List容器的元素分别为: ";
+
+	//for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+	//{
+	//	cout << *it << " ";
+	//}
+
+	//arr.erase(arr.begin(), arr.end());
+
+	//cout << endl;
+
+	//arr.erase(arr.begin(), arr.end());
+
+	//cout << "该List容器的元素分别为: ";
+
+	//for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+	//{
+	//	cout << *it << " ";
+	//}
+
+	//arr.erase(arr.begin(), arr.end());
+
+	//cout << endl;
+
+
+
+
+//
+//	//使用remove删除掉所以等于x的元素.
+//
+//	arr.remove(2);
+//
+//	cout << "该List容器的元素分别为: ";
+//
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//
+//	//使用clear()函数删除掉容器内所有元素.
+//
+//	arr.clear();
+//
+//	cout << "该List容器的元素分别为: ";
+//
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//}
+
+	/*void pop_back() :删除容器尾元素，当且仅当容器不为空
+
+	void pop_front() : 删除容器首元素，当且仅当容器不为空
+
+	void remove(const T& x) : 删除容器中所有元素值等于x的元素
+
+	void clear() : 删除容器中的所有元素
+
+	iterator erase(iterator it) : 删除迭代器指针it对应的元素
+
+	iterator erase(iterator first, iterator last) : 删除迭代器指针[first, last)间的元素*/
+//	list<int> arr;
+//
+//	arr.push_back(1);
+//
+//	arr.push_back(2);
+//
+//	arr.push_back(3);
+//
+//	arr.push_back(4);
+//
+//	cout << "该List容器的元素分别为: ";
+//
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//
+//	//头删 pop_front() 和 尾删pop_back()的用法
+//
+//	arr.pop_front();
+//
+//	cout << "经过头删后该List容器的元素分别为: ";
+//
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//
+//	arr.pop_back();
+//
+//	cout << "经过尾删后该List容器的元素分别为: ";
+//
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//}
+
+	
+//	list<int> arr(5, 1);
+//
+//	list<int> arr2(5, 2);
+//
+//	list<int>::iterator it;
+//
+//	it = arr.begin();
+//
+//	arr.insert(++it, arr2.begin(), arr2.end());
+//
+//	cout << "该List容器的元素分别为: ";
+//
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//}
+
+//
+//	list<int> arr(5, 1);
+//
+//	list<int>::iterator it;
+//
+//	it = arr.begin();
+//
+//	arr.insert(it, 100);
+//
+//	//对iterator指向的位置前面插入元素
+//
+//	cout << "该List容器的元素分别为: ";
+//
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//
+//	arr.insert(++it, 3, 200);
+//
+//	//对iterator指向的位置前面出入n个相同的元素.
+//
+//	cout << "该List容器的元素分别为: ";
+//
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//
+//}
+
+
+
+//
+//	list<int> arr;
+//
+//	//利用push_back进行后插入元素.
+//
+//	arr.push_back(1);
+//
+//	arr.push_back(2);
+//
+//	arr.push_back(3);
+//
+//	cout << "该List容器的元素分别为: ";
+//
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//
+//	//利用push_front进行前插入元素.
+//
+//	arr.push_front(10);
+//
+//	arr.push_front(200);
+//
+//	arr.push_front(3000);
+//
+//	cout << "该List容器的元素分别为: ";
+//
+//	for (list<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//
+//}
+
+
+
+
+//
+//	list<int> arr;
+//
+//	for (int i = 1; i <= 5; ++i)
+//	{
+//		arr.push_back(i);
+//	}
+//
+//	cout << "该List容器的元素分别为: ";
+//
+//	for (list<int>::reverse_iterator it = arr.rbegin(); it != arr.rend(); ++it)
+//	{
+//		cout << *it << " ";
+//	}
+//
+//	cout << endl;
+//
+//}
+
+
+	//list<int> arr(5, 1);
+
+	//list<int>::iterator it;
+
+	////利用iterator遍历List容器
+
+	//cout << "原始时的list的元素分别为:";
+
+	//for (it = arr.begin(); it != arr.end(); it++)
+	//{
+	//	cout << *it << " ";
+	//}
+
+	//cout << endl;
+
+	//int& i = arr.front();
+
+	////front()返回首元素的引用
+
+	//int& j = arr.back();
+
+	////back()返回尾元素的引用
+
+	//i = 100;
+
+	//j = 200;
+
+	//cout << "改变后的list的元素分别为:";
+
+	//for (it = arr.begin(); it != arr.end(); it++)
+	//{
+	//	cout << *it << " ";
+	//}
+
+	//cout << endl;
+
+
+//
+//	list<int> arr(5, 1);
+//
+//	cout << "该list容器是否为空:" << arr.empty() << endl;
+//
+//	//注意empty()在容器为空，如果为空返回1
+//
+//	int i = arr.size();
+//
+//	//size()函数返回List当中的元素个数.
+//
+//	cout << "该list容器内的元素个数为: " << i << endl;
+//
+//	int count = arr.max_size();
+//
+//	//max_size()返回list中最大容纳的个数.
+//
+//	cout << "该list容器可最大容纳元素个数为: " << count << endl;
+//
+//}
+	/*list<int> arr;
+	创建一个空的list
+
+	list<int> arr2(arr);
+	通俗易懂的讲法就是拷贝构造.
+
+	list<int> arr3(5);
+	创建5个元素的List,每个元素的值由默认构造函数构成.
+
+	list<int> arr4(5, 1);
+	创建5个元素的list，每个元素的值由你指定.
+
+	list<int> arr(arr4.begin(),arr4.end());
+	由迭代器创建list，迭代区间为[begin,end];
+
+	system("pause");*/
+
+//	system("pause");
+//	int i = 0;
+//}
